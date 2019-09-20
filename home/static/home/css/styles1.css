@@ -1,0 +1,27 @@
+
+	
+#button1
+{
+	background-color: #15ff00;
+    color: rgb(31, 17, 221);
+    box-shadow: 2px 2px 5px black;
+
+}
+    
+#nav_post
+{
+    height: 14%;
+}
+
+
+
+#new_blog
+{
+    margin-top : 10px;
+    width: 50%;
+}
+
+h1
+{
+    text-align: center;
+}

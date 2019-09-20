@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sign Up Page
+        </title>
+        {% load static %}
+        <link rel='stylesheet' href="{%static "home/css/styles1.css"%}">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        <h1>SIGN UP</h1>
+        
+        <div class="container">
+        <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            
+            <form method="POST" action="/signup/">
+                {% csrf_token %}
+                
+                
+                
+                    <div class="form-row">
+                            <div class="form-col">
+                              <input type="text" class="form-control" placeholder="First name" name="fname" required>
+                            </div>
+                            <br>
+                            <div class="form-col">
+                              <input type="text" class="form-control" placeholder="Last name" name="lname" required>
+                            </div>
+                          </div>
+                          <br>
+
+                          
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <br>  
+                    </div>
+                    <div class="form-group">
+                      <label for="username_input">Username</label>
+                      <input type="text" class="form-control" id="username_input" placeholder="Username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputPassword">Password</label>
+                        <input type="password" class="form-control" id="InputPassword" placeholder="Password" name="password" required>
+                      </div>
+                      
+                    <button type="submit" class="btn btn-primary" id="button1">Submit</button>
+
+                    <p>Already a member...
+                      <a href="{% url 'home:login'%}">Login</a>
+                    </p>
+
+                
+                  </form>
+                
+             </div>
+
+                  <div class="col-md-3"></div>                
+            </div>
+        </div>  
+                    
+
+    </body>    
+</html>

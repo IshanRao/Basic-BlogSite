@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Index Page of Blog Site
+        </title>
+        {%load static%}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static "home/css/styles1.css"%}">
+
+    </head>
+
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav_post">
+            <a class="navbar-brand" href="#">BlogSite</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{%url 'home:login'%}">LOG IN<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'home:signup'%}">SIGN UP</a>
+                </li>
+              </ul>
+
+              <nav class="navbar navbar-dark bg-dark">
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <a class="nav-link">Search</a></button>
+                </form>
+              </nav>
+            
+            </div>
+          </nav>
+
+          {%for post in posts%}
+          <div class="card" id="new_blog">
+            <h5 class="card-header">{{post.title}}</h5>
+            <div class="card-body">
+              <h5 class="card-title">Posted By : {{post.posted_by}}</h5>
+              <p class="card-text">{{post.content}}</p>
+              
+            </div>
+          </div>
+          {% endfor %}
+
+    </body>
+</html>
