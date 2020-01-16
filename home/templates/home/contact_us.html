@@ -1,0 +1,13 @@
+{%extends 'home/base.html'%}
+
+
+{%block title%}Contact US{% endblock title%}
+{%block content%}
+<div class="form-container">
+<form method="POST" action="">
+{%csrf_token%}
+{{form}}
+<input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

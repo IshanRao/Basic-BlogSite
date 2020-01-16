@@ -14,6 +14,7 @@ urlpatterns = [
     path('posts/archive/monthly/',views.filter_by_month,name="month_filter"),
     path('posts/archive/yearly/',views.filter_by_year,name="year_fiter"),
     path('posts/id/<int:post_id>',views.filter_by_id,name="id_filter"),
+    path('contactus/',views.contact_us,name="contact_us")
     
 ]
 

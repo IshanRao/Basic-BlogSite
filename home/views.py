@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from .models import Post
+from .forms import ContactForm
 
 # Create your views here.
 # redirect 
@@ -97,6 +98,19 @@ def filter_by_id(req,post_id) :
 
     posts = Post.objects.filter(id=post_id)
     return render(req,'home/index.html',{'posts' : posts})    
+
+def contact_us(req) :
+
+    if req.method == "POST" :
+        form = ContactForm(req.POST)
+        if form.is_valid() :
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+        return HttpResponse(name)    
+    else :
+        form = ContactForm()
+        return render(req,'home/contact_us.html',{'form' : form})    
 
 
 

@@ -25,3 +25,11 @@ h1
 {
     text-align: center;
 }
+
+.form-container
+{
+    margin: 10px auto;
+    padding: 10px;
+    border : black 2px solid;
+    width: 100%;
+}
